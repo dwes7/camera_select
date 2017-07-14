@@ -1,0 +1,41 @@
+<launch>
+
+
+<!-- <include file="$(find usb_cam)/launch/usb_cam-test.launch"/> -->
+
+
+<!-- <node name="camera_select" pkg="camera_select" type="camera_select" >
+  <param name="CAM_NUM" value="2" />
+</node>
+ -->
+
+	<node respawn="true" pkg="joy"
+	    type="joy_node" name="joy" >
+	<param name="dev" type="string" value="/dev/input/js1" />
+	<param name="deadzone" value="0.12" />
+	<remap from="joy" to="joy_drive"/>
+	</node>
+
+<!--   <node name="usb_cam0" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="460" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="framerate" value="25" />
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+  </node>
+
+  <node name="usb_cam1" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video1" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="460" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="framerate" value="25" />
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+  </node>
+
+ -->
+
+</launch>
